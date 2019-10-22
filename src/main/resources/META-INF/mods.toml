@@ -1,0 +1,35 @@
+modLoader="javafml"
+loaderVersion="[28,)"
+issueTrackerURL="https://github.com/hnOsmium0001/HarmonicsCore-Example/issues" #optional
+[[mods]]
+modId="hcdemo"
+version="${file.jarVersion}"
+displayName="HarmonicsCore Demo"
+#updateJSONURL="http://myurl.me/" #optional
+displayURL="https://github.com/hnOsmium0001/HarmonicsCore-Example" #optional
+#logoFile="examplemod.png" #optional
+credits="Thanks for this example mod goes to Java" #optional
+authors="hnOsmium0001" #optional
+description='''
+'''
+
+[[dependencies.hcdemo]]
+    modId="forge"
+    mandatory=true
+    versionRange="[28,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.hcdemo]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.14.4]"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.hcdemo]]
+    modId="harmonics"
+    mandatory=true
+    versionRange="[1.0,)"
+    ordering="NONE"
+    side="BOTH"
