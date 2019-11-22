@@ -1,2 +1,2 @@
 # HarmonicsCore-Example
-demos for HarmonicsCore, a Minecraft library mod
+documentations and demos for HarmonicsCore, a Minecraft library mod
