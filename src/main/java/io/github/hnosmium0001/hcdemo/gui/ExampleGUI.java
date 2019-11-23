@@ -10,7 +10,7 @@ import powerlessri.harmonics.gui.window.AbstractWindow;
 import java.util.ArrayList;
 import java.util.List;
 
-public class KExampleGUI extends WidgetScreen {
+public class ExampleGUI extends WidgetScreen {
 
     public ExampleGUI() {
         super(new StringTextComponent("test"));
@@ -24,7 +24,7 @@ public class KExampleGUI extends WidgetScreen {
 
     public static class Window extends AbstractWindow {
 
-        private List<IWidget> children = new ArrayList();
+        private List<IWidget> children = new ArrayList<>();
 
         public Window() {
             // Width and height of this window
@@ -33,6 +33,7 @@ public class KExampleGUI extends WidgetScreen {
             centralize();
 
             TextField textField = new TextField(40, 14); // Width and height
+            textField.attachWindow(this);
             children.add(textField);
         }
 

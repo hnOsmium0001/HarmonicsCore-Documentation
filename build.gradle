@@ -69,10 +69,6 @@ minecraft {
 }
 
 repositories {
-     maven {
-        name "Github Package Registry"
-        url "https://mvn.pkg.github.com/"
-    }
     maven {
         name "CurseForge"
         url "https://minecraft.curseforge.com/api/maven/"
@@ -83,8 +79,7 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.14.4-28.1.61'
 
     // Curseforge Maven
-    compile fg.deobf("powerlessri.harmonics:HarmonicsCore:${mc_version}-${harmonics_core_version}")
-    // compile fg.deobf("harmonics-core:HarmonicsCore:${mc_version}:${harmonics_core_version}")
+     compile "harmonics-core:HarmonicsCore-${mc_version}:${harmonics_core_version}:source"
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..
