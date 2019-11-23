@@ -20,15 +20,15 @@ archivesBaseName = 'hcdemo'
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
 minecraft {
-    mappings channel: 'snapshot', version: '20190719-1.14.3'
-    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
-    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+    mappings channel: 'snapshot', version: '20190831-1.14.3'
+//     makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+//     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
     runs {
         client {
             workingDirectory project.file('run')
 
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
 
             mods {
@@ -41,7 +41,7 @@ minecraft {
         server {
             workingDirectory project.file('run')
 
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
 
             mods {
@@ -54,7 +54,7 @@ minecraft {
         data {
             workingDirectory project.file('run')
 
-            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+            property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
 
             args '--mod', 'hcdemo', '--all', '--output', file('src/generated/resources/')
@@ -69,6 +69,10 @@ minecraft {
 }
 
 repositories {
+     maven {
+        name "Github Package Registry"
+        url "https://mvn.pkg.github.com/"
+    }
     maven {
         name "CurseForge"
         url "https://minecraft.curseforge.com/api/maven/"
@@ -79,7 +83,8 @@ dependencies {
     minecraft 'net.minecraftforge:forge:1.14.4-28.1.61'
 
     // Curseforge Maven
-    compile "harmonics-core:HarmonicsCore:${mc_version}:${harmonics_core_version}"
+    compile fg.deobf("powerlessri.harmonics:HarmonicsCore:${mc_version}-${harmonics_core_version}")
+    // compile fg.deobf("harmonics-core:HarmonicsCore:${mc_version}:${harmonics_core_version}")
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..
