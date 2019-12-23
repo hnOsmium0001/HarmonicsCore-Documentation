@@ -1,6 +1,6 @@
 # Start making the first GUI
 
-# GUI class and window class
+## GUI class and window class
 
 Assuming you already have a Forge mod created, start by creating a class extending `WidgetScreen` from Harmonics Core.
 In the class we want to have a constructor and override the `init()` method just like what you will do with vanilla GUIs.
@@ -153,7 +153,7 @@ children.add(textField);
 ```
 
 Now, if we start the game, we will see the following:
-// TODO image
+![](https://github.com/hnOsmium0001/HarmonicsCore-Documentation/blob/1.14-doc/docs/GettingStarted/screenshot_firstgui.png)
 
 *The text field widget provided by HarmonicsCore has builtin text selection, copy/pasting function, which in most cases is enough.*
 *If anybody came up with a new fancy feature you can always PR us at our Github repository: https://github.com/hnOsmium0001/HarmonicsCore.*
